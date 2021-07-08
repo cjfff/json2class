@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-08 16:26:48
- * @LastEditTime: 2021-07-08 17:06:04
+ * @LastEditTime: 2021-07-08 19:42:24
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /complier/json/index.tsx
@@ -34,7 +34,7 @@ function generateType(typeChar: string) {
 function generateAttribute(data: {name:string;type:string}) {
   return `  ${generateType(data.type)}
   ${data.name}: ${data.type};
-  `
+`
 }
 
 /**
@@ -51,9 +51,8 @@ export function generate(jsonData, rootInterfaceName = "RootObject") {
   return interfaces
     .reverse()
     .map((tsInterface) => {
-      return `class ${tsInterface.name} {\n${tsInterface.properties
-        .map((prop) => generateAttribute(prop))
-        .join("\n")}\n}`;
+      const content = tsInterface.properties.map((prop) => generateAttribute(prop)).join("\n")
+      return `class ${tsInterface.name} {\n${content}}`;
     })
     .join("\n\n");
 }
