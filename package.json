@@ -1,0 +1,20 @@
+{
+  "name": "@chenxxx/json2class",
+  "version": "0.0.1",
+  "description": "json2class",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "json2class"
+  ],
+  "author": "https://github.com/cjfff",
+  "repository": "https://github.com/cjfff/json2class",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^16.0.1"
+  }
+}
